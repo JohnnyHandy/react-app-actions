@@ -2,6 +2,8 @@
 on:
   pull_request:
     branches: [develop]
+  push:
+    branches: [develop]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -16,3 +18,10 @@ jobs:
       - run: npm test --coverage
         env:
           CI: true
+      - name: Build Project
+        if: github.event_name == 'push'
+        run: npm run build
+      - name: Deploy to Staging
+        if: github.event_name == 'push'
+        run: npx surge
+
