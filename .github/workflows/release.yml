@@ -3,7 +3,7 @@ on:
   release:
     types: [published]
 jobs:
-  slack-messsage:
+  slack-message:
     runs-on: ubuntu-latest
     steps:
       - name: Slack Message
