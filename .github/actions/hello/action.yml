@@ -1,0 +1,14 @@
+﻿name: Hello World
+author: Johnny Handy
+description: Some description
+inputs:
+  who-to-greet:
+    description: "Who to greet"
+    required: true
+    default: Johnny
+outputs:
+  time:
+    description: "The greeting time"
+runs:
+  using: "node12"
+  main: "dist/index.js"
